@@ -1,0 +1,16 @@
+server:
+  port: 3150
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  instance:
+    prefer-ip-address: false
+    hostname: localhost
+  client:
+    register-with-eureka: false #유레카 서버에 클라이언트로 등록하지 않음. 서버니까
+    fetch-registry: false #로컬에 캐싱할 필요 없다. 서버니까
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
